@@ -4,66 +4,96 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Sriram Kolluri - DevOps Engineer Intern. Linux, Docker, AWS, Terraform, CI/CD." />
-  <title>Sriram Kolluri | DevOps Engineer</title>
+  <title>Sriram Kolluri | Software Engineer , DevOps Engineer/ Intern</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Apply the saved theme before the page draws, so there's no flash of the wrong colors -->
+  <script>
+    try {
+      if (localStorage.getItem('theme') === 'blue') {
+        document.documentElement.setAttribute('data-theme', 'blue');
+      }
+    } catch (e) {}
+  </script>
 </head>
 <body>
 
   <!-- ===== NAVBAR ===== -->
   <header class="navbar">
-    <a href="#home" class="logo">&lt;SK /&gt;</a>
+    <div class="nav-inner">
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu">☰</button>
 
-    <nav>
       <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#experience">Experience</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact">Get In Touch</a></li>
       </ul>
-    </nav>
 
-    <div class="nav-actions">
-      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">☀️</button>
-      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu">☰</button>
+      <div class="nav-right">
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/SRIRAMKOLLURI" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/linkedin/linkedin-plain.svg" alt="" />
+          </a>
+          <a href="https://github.com/SRIRAMKOLLURI92" target="_blank" rel="noopener" aria-label="GitHub">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/github/github-original.svg" alt="" />
+          </a>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Switch to blue theme">🔷</button>
+      </div>
     </div>
   </header>
 
   <main>
     <!-- ===== HERO ===== -->
     <section class="hero" id="home">
-      <p class="hero-hello">Hi, I'm</p>
-      <h1>Sriram Kolluri</h1>
-      <h2 class="hero-role">DevOps Engineer Intern</h2>
-      <p class="hero-text">
-        Master's student in Software Engineering at EPITA, building and shipping
-        apps with Linux, Docker, AWS, Terraform and CI/CD.
-      </p>
+      <div class="hero-grid">
+        <div class="hero-content">
+          <h1>Sriram Kolluri</h1>
+          <p class="hero-role">Software Engineer , DevOps Engineer/ Intern</p>
+          <p class="hero-text">
+            Master's student in Software Engineering at EPITA. I build, containerize
+            and deploy apps with Linux, Docker, AWS, Terraform and CI/CD.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn-green">View my work ›</a>
+            <a href="resume.pdf" class="link-plain" download>Download resume</a>
+          </div>
+        </div>
 
-      <div class="terminal">
-        <div class="terminal-bar"><span></span><span></span><span></span></div>
-        <pre><code><span class="prompt">$</span> whoami
-sriram-kolluri
-<span class="prompt">$</span> docker ps --format "{{.Names}}"
-portfolio-app
-<span class="prompt">$</span> <span id="typing"></span><span class="cursor">▋</span></code></pre>
+        <div class="hero-photo">
+          <div class="photo-frame skeleton">
+            <img src="profile.jpg" alt="Sriram Kolluri" />
+          </div>
+        </div>
       </div>
 
-      <div class="hero-buttons">
-        <a href="#projects" class="btn btn-primary">View Projects</a>
-        <a href="resume.pdf" class="btn btn-outline" download>Download Resume</a>
+      <div class="tools">
+        <p class="tools-label">Tools I work with</p>
+        <div class="tools-grid">
+          <div class="tool skeleton"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/linux/linux-original.svg" alt="" />Linux</div>
+          <div class="tool skeleton"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/docker/docker-original.svg" alt="" />Docker</div>
+          <div class="tool skeleton"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="" />AWS</div>
+          <div class="tool skeleton"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/terraform/terraform-original.svg" alt="" />Terraform</div>
+          <div class="tool skeleton"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/python/python-original.svg" alt="" />Python</div>
+          <div class="tool skeleton"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/git/git-original.svg" alt="" />Git</div>
+        </div>
       </div>
     </section>
 
     <!-- ===== ABOUT ===== -->
     <section class="section" id="about">
       <h2 class="section-title">About Me</h2>
+      <p class="section-intro">From electrical engineering to data to DevOps.</p>
       <div class="about-grid">
-        <p>
+        <p class="about-text">
           I'm transitioning into DevOps with hands-on experience automating data pipelines,
           managing SQL-backed reporting systems, and collaborating across engineering and
           analytics teams. I'm comfortable in Linux environments and scripting with Python,
@@ -74,12 +104,12 @@ portfolio-app
 
         <div class="about-cards">
           <div class="card">
-            <h3>🎓 Education</h3>
+            <h3>Education</h3>
             <p><strong>M.Sc. Software Engineering</strong><br />EPITA, France · 2025 – 2026</p>
             <p><strong>B.Tech Electrical &amp; Electronics</strong><br />JNTUH, India · 2022</p>
           </div>
           <div class="card">
-            <h3>🗣️ Languages</h3>
+            <h3>Languages</h3>
             <p>Telugu — Native<br />English — Fluent<br />French — Intermediate</p>
           </div>
         </div>
@@ -89,9 +119,10 @@ portfolio-app
     <!-- ===== SKILLS ===== -->
     <section class="section" id="skills">
       <h2 class="section-title">Skills</h2>
+      <p class="section-intro">What I use, and what I'm learning right now.</p>
       <div class="skills-grid">
         <div class="card reveal">
-          <h3>⚙️ Core DevOps</h3>
+          <h3>Core DevOps</h3>
           <ul class="tags">
             <li>Linux</li><li>Bash</li><li>Python</li><li>Git &amp; GitHub</li>
             <li>Docker</li><li>GitHub Actions</li><li>AWS (EC2, S3, IAM)</li>
@@ -99,13 +130,13 @@ portfolio-app
           </ul>
         </div>
         <div class="card reveal">
-          <h3>🚧 Currently Building</h3>
+          <h3>Currently Building</h3>
           <ul class="tags">
             <li>Kubernetes</li><li>Terraform</li><li>Prometheus</li><li>Grafana</li>
           </ul>
         </div>
         <div class="card reveal">
-          <h3>💻 Additional</h3>
+          <h3>Additional</h3>
           <ul class="tags">
             <li>Java Full-Stack</li><li>JavaScript</li><li>HTML / CSS</li>
             <li>Flask</li><li>C</li><li>MATLAB &amp; Simulink</li>
@@ -116,26 +147,24 @@ portfolio-app
 
     <!-- ===== PROJECTS ===== -->
     <section class="section" id="projects">
-      <h2 class="section-title">Projects</h2>
+      <h2 class="section-title">Recent Work</h2>
+      <p class="section-intro">Things I've built and shipped.</p>
       <div class="projects-grid">
 
         <article class="card project reveal">
           <div class="project-head">
-            <h3>DevOps Portfolio Project</h3>
+            <h3>ShopyCat</h3>
             <span class="year">2026</span>
           </div>
-          <p class="project-sub">Full-stack web app, containerized and deployed to the cloud</p>
+          <p class="project-sub">Java learning project · in progress</p>
           <ul class="project-points">
-            <li>Built a Python/Flask REST API with an HTML/CSS/JS frontend.</li>
-            <li>Containerized with a custom Dockerfile, published to Docker Hub.</li>
-            <li>Provisioned AWS EC2, security groups and IAM with Terraform.</li>
-            <li>Deployed on Amazon Linux with SSH, Docker and network rules.</li>
-            <li>Adding a GitHub Actions CI/CD pipeline for automatic redeploys.</li>
+            <li>A shopping application I'm building to practise Java.</li>
+            <li>Version-controlled on GitHub from day one.</li>
           </ul>
-          <ul class="tags small">
-            <li>Flask</li><li>Docker</li><li>Terraform</li><li>AWS</li><li>GitHub Actions</li>
+          <ul class="tags">
+            <li>Java</li><li>Git &amp; GitHub</li>
           </ul>
-          <a class="btn btn-outline" href="https://github.com/SRIRAMKOLLURI92/DevOps-portfolio-project-alpha" target="_blank" rel="noopener">View on GitHub →</a>
+          <a class="btn-outline" href="https://github.com/SRIRAMKOLLURI92/shopyCat" target="_blank" rel="noopener">View on GitHub ›</a>
         </article>
 
         <article class="card project reveal">
@@ -146,13 +175,13 @@ portfolio-app
           <p class="project-sub">Responsive personal website, built from scratch</p>
           <ul class="project-points">
             <li>Semantic HTML, CSS Grid and Flexbox, no frameworks.</li>
-            <li>Dark/light theme and scroll animations in vanilla JavaScript.</li>
+            <li>Mobile menu and scroll animations in vanilla JavaScript.</li>
             <li>Deployed for free on GitHub Pages.</li>
           </ul>
-          <ul class="tags small">
+          <ul class="tags">
             <li>HTML</li><li>CSS</li><li>JavaScript</li><li>GitHub Pages</li>
           </ul>
-          <a class="btn btn-outline" href="https://github.com/SRIRAMKOLLURI92" target="_blank" rel="noopener">View on GitHub →</a>
+          <a class="btn-outline" href="https://github.com/SRIRAMKOLLURI92/SRIRAMKOLLURI92.github.io" target="_blank" rel="noopener">View on GitHub ›</a>
         </article>
 
       </div>
@@ -161,6 +190,7 @@ portfolio-app
     <!-- ===== EXPERIENCE ===== -->
     <section class="section" id="experience">
       <h2 class="section-title">Experience</h2>
+      <p class="section-intro">Where I've worked.</p>
       <div class="timeline">
         <div class="timeline-item reveal">
           <div class="timeline-dot"></div>
@@ -180,7 +210,7 @@ portfolio-app
         </div>
       </div>
 
-      <h3 class="sub-title">🏆 Achievements</h3>
+      <h3 class="sub-title">Achievements</h3>
       <ul class="achievements">
         <li>Ranked "Best Project Document" and 2nd Best Project in final-year projects.</li>
         <li>Awarded "Office Explorer" and "POD Train Head" recognitions.</li>
@@ -190,14 +220,11 @@ portfolio-app
 
     <!-- ===== CONTACT ===== -->
     <section class="section contact" id="contact">
-      <h2 class="section-title">Let's Connect</h2>
-      <p>I'm looking for a DevOps internship. Feel free to reach out!</p>
-      <p>📍 Villepinte, France</p>
-      <div class="hero-buttons">
-        <a href="mailto:sriramkolluri8@gmail.com" class="btn btn-primary">Email Me</a>
-        <a href="https://www.linkedin.com/in/SRIRAMKOLLURI" class="btn btn-outline" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/SRIRAMKOLLURI92" class="btn btn-outline" target="_blank" rel="noopener">GitHub</a>
-      </div>
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="section-intro">
+        I'm looking for a DevOps internship. Based in Villepinte, France.
+      </p>
+      <a href="mailto:sriramkolluri8@gmail.com" class="btn-green">Email me ›</a>
     </section>
   </main>
 

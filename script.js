@@ -2,25 +2,48 @@
 document.getElementById('year').textContent = new Date().getFullYear();
 
 
-// ===== 2. DARK / LIGHT THEME =====
+// ===== 2. THEME TOGGLE (black / blue circuit background) =====
 const themeBtn = document.getElementById('theme-toggle');
 const root = document.documentElement;
 
-function setTheme(theme) {
-  root.setAttribute('data-theme', theme);
-  themeBtn.textContent = theme === 'light' ? '🌙' : '☀️';
-  localStorage.setItem('theme', theme);
+function applyTheme(theme) {
+  if (theme === 'blue') {
+    root.setAttribute('data-theme', 'blue');
+  } else {
+    root.removeAttribute('data-theme');
+  }
+  themeBtn.textContent = theme === 'blue' ? '⚫' : '🔷';
+  themeBtn.setAttribute('aria-label', theme === 'blue' ? 'Switch to black theme' : 'Switch to blue theme');
 }
 
-setTheme(localStorage.getItem('theme') || 'dark');
+// Sync the button icon with whatever the <head> script already applied
+applyTheme(root.getAttribute('data-theme') === 'blue' ? 'blue' : 'dark');
 
 themeBtn.addEventListener('click', () => {
-  const current = root.getAttribute('data-theme');
-  setTheme(current === 'light' ? 'dark' : 'light');
+  const next = root.getAttribute('data-theme') === 'blue' ? 'dark' : 'blue';
+  applyTheme(next);
+  try {
+    localStorage.setItem('theme', next);
+  } catch (e) {}
 });
 
 
-// ===== 3. MOBILE MENU =====
+// ===== 3. SKELETON LOADERS =====
+// Each .skeleton box holds an image. When it finishes loading, remove the shimmer.
+document.querySelectorAll('.skeleton').forEach((box) => {
+  const img = box.querySelector('img');
+  const done = () => box.classList.remove('skeleton');
+
+  if (img.complete && img.naturalWidth > 0) {
+    done(); // already loaded (from cache)
+  } else {
+    img.addEventListener('load', done);
+    img.addEventListener('error', done); // don't shimmer forever if it fails
+  }
+});
+
+
+// ===== 4. MOBILE MENU =====
 const menuBtn = document.getElementById('menu-toggle');
 const navLinks = document.getElementById('nav-links');
 
@@ -35,42 +58,6 @@ navLinks.querySelectorAll('a').forEach((link) => {
     menuBtn.textContent = '☰';
   });
 });
-
-
-// ===== 4. TERMINAL TYPING EFFECT =====
-const commands = [
-  'terraform apply',
-  'kubectl get pods',
-  'docker build -t portfolio .',
-  'git push origin main'
-];
-
-const typingEl = document.getElementById('typing');
-let cmdIndex = 0;
-let charIndex = 0;
-let deleting = false;
-
-function type() {
-  const current = commands[cmdIndex];
-
-  charIndex = deleting ? charIndex - 1 : charIndex + 1;
-  typingEl.textContent = current.slice(0, charIndex);
-
-  let delay = deleting ? 50 : 100;
-
-  if (!deleting && charIndex === current.length) {
-    deleting = true;
-    delay = 1500;
-  } else if (deleting && charIndex === 0) {
-    deleting = false;
-    cmdIndex = (cmdIndex + 1) % commands.length;
-    delay = 400;
-  }
-
-  setTimeout(type, delay);
-}
-
-type();
 
 
 // ===== 5. REVEAL ON SCROLL =====
