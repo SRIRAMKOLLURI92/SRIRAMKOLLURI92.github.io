@@ -1,0 +1,57 @@
+name: CI / Deploy portfolio
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download the code
+        uses: actions/checkout@v4
+
+      - name: Check required files exist
+        run: |
+          for f in index.html style.css script.js profile.jpg resume.pdf favicon.svg bg-circuit.jpg; do
+            if [ -f "$f" ]; then
+              echo "OK      $f"
+            else
+              echo "MISSING $f"
+              exit 1
+            fi
+          done
+
+  deploy:
+    needs: check
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Download the code
+        uses: actions/checkout@v4
+
+      - name: Set up GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Package the site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
