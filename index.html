@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sriram Kolluri - DevOps Engineer Intern. Linux, Docker, AWS, Terraform, CI/CD." />
+  <title>Sriram Kolluri | DevOps Engineer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar">
+    <a href="#home" class="logo">&lt;SK /&gt;</a>
+
+    <nav>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">☀️</button>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="home">
+      <p class="hero-hello">Hi, I'm</p>
+      <h1>Sriram Kolluri</h1>
+      <h2 class="hero-role">DevOps Engineer Intern</h2>
+      <p class="hero-text">
+        Master's student in Software Engineering at EPITA, building and shipping
+        apps with Linux, Docker, AWS, Terraform and CI/CD.
+      </p>
+
+      <div class="terminal">
+        <div class="terminal-bar"><span></span><span></span><span></span></div>
+        <pre><code><span class="prompt">$</span> whoami
+sriram-kolluri
+<span class="prompt">$</span> docker ps --format "{{.Names}}"
+portfolio-app
+<span class="prompt">$</span> <span id="typing"></span><span class="cursor">▋</span></code></pre>
+      </div>
+
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="resume.pdf" class="btn btn-outline" download>Download Resume</a>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="section" id="about">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-grid">
+        <p>
+          I'm transitioning into DevOps with hands-on experience automating data pipelines,
+          managing SQL-backed reporting systems, and collaborating across engineering and
+          analytics teams. I'm comfortable in Linux environments and scripting with Python,
+          with growing experience in Docker, CI/CD and cloud infrastructure.
+          My electrical engineering background gives me a systems-and-process mindset
+          focused on accuracy, quality and reliability.
+        </p>
+
+        <div class="about-cards">
+          <div class="card">
+            <h3>🎓 Education</h3>
+            <p><strong>M.Sc. Software Engineering</strong><br />EPITA, France · 2025 – 2026</p>
+            <p><strong>B.Tech Electrical &amp; Electronics</strong><br />JNTUH, India · 2022</p>
+          </div>
+          <div class="card">
+            <h3>🗣️ Languages</h3>
+            <p>Telugu — Native<br />English — Fluent<br />French — Intermediate</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section class="section" id="skills">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+        <div class="card reveal">
+          <h3>⚙️ Core DevOps</h3>
+          <ul class="tags">
+            <li>Linux</li><li>Bash</li><li>Python</li><li>Git &amp; GitHub</li>
+            <li>Docker</li><li>GitHub Actions</li><li>AWS (EC2, S3, IAM)</li>
+            <li>SQL</li><li>YAML / JSON</li>
+          </ul>
+        </div>
+        <div class="card reveal">
+          <h3>🚧 Currently Building</h3>
+          <ul class="tags">
+            <li>Kubernetes</li><li>Terraform</li><li>Prometheus</li><li>Grafana</li>
+          </ul>
+        </div>
+        <div class="card reveal">
+          <h3>💻 Additional</h3>
+          <ul class="tags">
+            <li>Java Full-Stack</li><li>JavaScript</li><li>HTML / CSS</li>
+            <li>Flask</li><li>C</li><li>MATLAB &amp; Simulink</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section class="section" id="projects">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+
+        <article class="card project reveal">
+          <div class="project-head">
+            <h3>DevOps Portfolio Project</h3>
+            <span class="year">2026</span>
+          </div>
+          <p class="project-sub">Full-stack web app, containerized and deployed to the cloud</p>
+          <ul class="project-points">
+            <li>Built a Python/Flask REST API with an HTML/CSS/JS frontend.</li>
+            <li>Containerized with a custom Dockerfile, published to Docker Hub.</li>
+            <li>Provisioned AWS EC2, security groups and IAM with Terraform.</li>
+            <li>Deployed on Amazon Linux with SSH, Docker and network rules.</li>
+            <li>Adding a GitHub Actions CI/CD pipeline for automatic redeploys.</li>
+          </ul>
+          <ul class="tags small">
+            <li>Flask</li><li>Docker</li><li>Terraform</li><li>AWS</li><li>GitHub Actions</li>
+          </ul>
+          <a class="btn btn-outline" href="https://github.com/SRIRAMKOLLURI92/DevOps-portfolio-project-alpha" target="_blank" rel="noopener">View on GitHub →</a>
+        </article>
+
+        <article class="card project reveal">
+          <div class="project-head">
+            <h3>This Portfolio</h3>
+            <span class="year">2026</span>
+          </div>
+          <p class="project-sub">Responsive personal website, built from scratch</p>
+          <ul class="project-points">
+            <li>Semantic HTML, CSS Grid and Flexbox, no frameworks.</li>
+            <li>Dark/light theme and scroll animations in vanilla JavaScript.</li>
+            <li>Deployed for free on GitHub Pages.</li>
+          </ul>
+          <ul class="tags small">
+            <li>HTML</li><li>CSS</li><li>JavaScript</li><li>GitHub Pages</li>
+          </ul>
+          <a class="btn btn-outline" href="https://github.com/SRIRAMKOLLURI92" target="_blank" rel="noopener">View on GitHub →</a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== EXPERIENCE ===== -->
+    <section class="section" id="experience">
+      <h2 class="section-title">Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="card">
+            <div class="project-head">
+              <h3>Associate Data Analyst</h3>
+              <span class="year">Jan 2023 – Sep 2024</span>
+            </div>
+            <p class="project-sub">Deepen.AI India (Aecsine Software Solutions), Hyderabad</p>
+            <ul class="project-points">
+              <li>Automated recurring data extraction and reporting workflows, cutting manual processing time.</li>
+              <li>Built and maintained SQL-backed dashboards for business performance metrics.</li>
+              <li>Worked with engineering teams to define data requirements and keep pipelines reliable.</li>
+              <li>Ran audits and validation checks to catch data-quality issues before production.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="sub-title">🏆 Achievements</h3>
+      <ul class="achievements">
+        <li>Ranked "Best Project Document" and 2nd Best Project in final-year projects.</li>
+        <li>Awarded "Office Explorer" and "POD Train Head" recognitions.</li>
+        <li>Volunteered in tech-management roles for government exams and campus fests.</li>
+      </ul>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="section contact" id="contact">
+      <h2 class="section-title">Let's Connect</h2>
+      <p>I'm looking for a DevOps internship. Feel free to reach out!</p>
+      <p>📍 Villepinte, France</p>
+      <div class="hero-buttons">
+        <a href="mailto:sriramkolluri8@gmail.com" class="btn btn-primary">Email Me</a>
+        <a href="https://www.linkedin.com/in/SRIRAMKOLLURI" class="btn btn-outline" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/SRIRAMKOLLURI92" class="btn btn-outline" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Sriram Kolluri · Built with HTML, CSS &amp; JavaScript</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
